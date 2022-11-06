@@ -1,6 +1,6 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 
 const bodyparser = require('body-parser');
 const route = require('./routes/route');
@@ -14,10 +14,10 @@ mongoose.connect("mongodb+srv://Suman-1432:Suman1432@cluster0.bkkfmpr.mongodb.ne
 
 app.use('/', route)
 
-app.use((req,res,next)=>{
-    res.status(404).send({status:false, msg:`Not found ${req.url}`})
-    next()
-})
+// app.use((req,res,next)=>{
+//     res.status(404).send({status:false, msg:`Not found ${req.url}`})
+//     next()
+// })
 
 
 app.listen(process.env.PORT || 3000, function () {
